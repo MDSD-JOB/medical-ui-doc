@@ -10,6 +10,9 @@
     "lint": "vue-cli-service lint",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
+  "pre-commit": [
+    "lint",
+  ],
   "files": [
     "lib/*",
     "dist/*",
@@ -47,6 +50,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "husky": "^7.0.2",
+    "pre-commit": "^1.2.2",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.11"
   },
