@@ -4,10 +4,10 @@
   </div>
 </template>
 <script>
-import { ProTable } from "medical-ui";
+import { ProTable } from 'medical-ui'
 export default {
   components: {
     ProTable,
   },
-};
+}
 </script>
