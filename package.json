@@ -10,9 +10,6 @@
     "lint": "vue-cli-service lint",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
-  "script":{
-    "commit": "git-cz"
-  },
   "files": [
     "lib/*",
     "dist/*",
@@ -32,7 +29,6 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-angular": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
@@ -53,28 +49,25 @@
     "eslint-plugin-vue": "^6.2.2",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
-    "pre-commit": "^1.2.2",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.11"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "src/**": [
     "eslint --fix --ext .js",
     "prettier --write",
     "git add"
   ],
+  "script":{
+    "commit":"git-cz",
+    "changelog":"conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-customizable"
+      "path": "node_modules/cz-customizable"
     }
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "hooks": { "commit-msg":"commitlint -e $GIT_PARAMS" }
   },
   "eslintConfig": {
     "root": true,
