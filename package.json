@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "main": "lib/medical-ui.common.js",
   "scripts": {
-    "sb": "start-storybook -p 6006",
     "build-sb": "build-storybook",
+    "sb": "start-storybook -p 6006",
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
