@@ -19,9 +19,6 @@
     "*.js"
   ],
   "dependencies": {
-    "@storybook/addon-docs": "^6.3.8",
-    "@storybook/addon-notes": "^5.3.21",
-    "@storybook/addon-viewport": "^6.3.8",
     "core-js": "^3.6.5",
     "medical-ui": "^0.1.33",
     "vue": "^2.6.11"
@@ -31,8 +28,11 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-docs": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
+    "@storybook/addon-notes": "^5.3.21",
+    "@storybook/addon-viewport": "^6.3.8",
     "@storybook/vue": "^6.3.8",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -52,23 +52,6 @@
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.11"
   },
-  "src/**": [
-    "eslint --fix --ext .js",
-    "prettier --write",
-    "git add"
-  ],
-  "script":{
-    "commit":"git-cz",
-    "changelog":"conventional-changelog -p angular -i CHANGELOG.md -s"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
-  },
-  "husky": {
-    "hooks": { "commit-msg":"commitlint -e $GIT_PARAMS" }
-  },
   "eslintConfig": {
     "root": true,
     "env": {
@@ -87,5 +70,10 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
 }
