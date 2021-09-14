@@ -1,8 +1,8 @@
-import ProTable from './ProTable.vue'
+import MedTable from './MedTable.vue'
 
 export default {
   title: '基础组件/表格',
-  component: ProTable,
+  component: MedTable,
   argTypes: {
     backgroundColor: { control: 'color' },
     size: {
@@ -13,8 +13,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { ProTable },
-  template: '<pro-table />',
+  components: { MedTable },
+  template: '<med-table />',
 })
 
 export const Primary = Template.bind({})

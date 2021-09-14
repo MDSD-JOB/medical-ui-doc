@@ -4,7 +4,7 @@
   "main": "lib/medical-ui.common.js",
   "scripts": {
     "sb": "start-storybook -p 6006",
-    "build-sb": "build-storybook",
+    "build:sb": "build-storybook",
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "core-js": "^3.6.5",
-    "medical-ui": "^0.1.33",
+    "medical-ui": "^0.1.37",
     "vue": "^2.6.11"
   },
   "devDependencies": {

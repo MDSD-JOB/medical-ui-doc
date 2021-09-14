@@ -1,13 +1,13 @@
 <template>
   <div>
-    <pro-table></pro-table>
+    <med-table></med-table>
   </div>
 </template>
 <script>
-import { ProTable } from 'medical-ui'
+import { MedTable } from 'medical-ui'
 export default {
   components: {
-    ProTable,
+    MedTable,
   },
 }
 </script>
