@@ -100,6 +100,14 @@ export default {
         options: ['button', 'reset', 'submit'],
       },
     },
+    timeout: {
+      name: 'timeout',
+      type: { required: false },
+      description: '点击事件触发延时',
+      control: {
+        type: 'number',
+      },
+    },
     click: {
       name: 'click',
       table: {
@@ -113,10 +121,9 @@ export default {
     },
   },
 }
-
 const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
   components: { MedButton },
+  props: Object.keys(argTypes),
   template: '<med-button v-bind="$props" @click="action">我是按钮</med-button>',
   methods: {
     action: action('btnClick'),
@@ -157,6 +164,7 @@ export const 按钮大小 = Template.bind({})
 按钮大小.args = {
   size: 'large',
 }
+
 export const 按钮宽度 = Template.bind({})
 按钮宽度.args = {
   block: true,

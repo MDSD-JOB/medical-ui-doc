@@ -19,6 +19,10 @@
     "*.js"
   ],
   "dependencies": {
+    "@storybook/addon-a11y": "^6.3.8",
+    "@storybook/addon-backgrounds": "^6.3.8",
+    "@storybook/addon-controls": "^6.3.8",
+    "@storybook/addon-storysource": "^6.3.8",
     "core-js": "^3.6.5",
     "medical-ui": "^0.1.37",
     "vue": "^2.6.11"

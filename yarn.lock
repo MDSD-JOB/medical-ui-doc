@@ -1707,6 +1707,28 @@
   resolved "https://registry.nlark.com/@soda/get-current-script/download/@soda/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha1-pTUV2yXYA4N0OBtzryC7Ty5QjYc=
 
+"@storybook/addon-a11y@^6.3.8":
+  version "6.3.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.3.8.tgz#7d6542d8e11fab38b21e7280100b0001a2b75232"
+  integrity sha512-Ili7hX+l4s9ILc/Hp19PoS9P942+139oawkzW5aW3Z6iwmP5J0ySXT4xcF9tFe2X8PeNTk5t2wXEUtBjmoE9Sg==
+  dependencies:
+    "@storybook/addons" "6.3.8"
+    "@storybook/api" "6.3.8"
+    "@storybook/channels" "6.3.8"
+    "@storybook/client-api" "6.3.8"
+    "@storybook/client-logger" "6.3.8"
+    "@storybook/components" "6.3.8"
+    "@storybook/core-events" "6.3.8"
+    "@storybook/theming" "6.3.8"
+    axe-core "^4.2.0"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    lodash "^4.17.20"
+    react-sizeme "^3.0.1"
+    regenerator-runtime "^0.13.7"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
 "@storybook/addon-actions@6.3.8", "@storybook/addon-actions@^6.3.8":
   version "6.3.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.3.8.tgz#85e342c30b3118a7885a5cf0ea83c3bb03a18558"
@@ -1730,7 +1752,7 @@
     util-deprecate "^1.0.2"
     uuid-browser "^3.1.0"
 
-"@storybook/addon-backgrounds@6.3.8":
+"@storybook/addon-backgrounds@6.3.8", "@storybook/addon-backgrounds@^6.3.8":
   version "6.3.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-6.3.8.tgz#36e009c4af0406e1280a7b6b691fa7666ff8cd50"
   integrity sha512-HxyeNfaJi5E0wfCxQhooT6OKEWRU+ukw80nvkuvlM9vuGoxHE4mVCa7oBFk6Ftjwev6njES1c/u8EpuqbRYeZg==
@@ -1748,7 +1770,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-controls@6.3.8":
+"@storybook/addon-controls@6.3.8", "@storybook/addon-controls@^6.3.8":
   version "6.3.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-controls/-/addon-controls-6.3.8.tgz#6bf1803d11ec3d95bbc6f806e9c40797dfc9a05d"
   integrity sha512-fOG+0gvhX7lbJbt0uqy1C2NCraJalE573/zUmSAwa8PQ3woritdpdn+XpV3H84c5+SpCCptZkBkxlfGLuwI1sw==
@@ -1873,6 +1895,26 @@
     memoizerific "^1.11.3"
     prop-types "^15.7.2"
     util-deprecate "^1.0.2"
+
+"@storybook/addon-storysource@^6.3.8":
+  version "6.3.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.3.8.tgz#250eb8e50beeb757d8eb2390bc6476f6f9fb2b49"
+  integrity sha512-Yw07zGWWCOUQcvWwtEsasHJ4LqRhx7fcHBkbI5jXNb4SjB6LYDpStPDDD+Oa5uW+CO0gOuSv5U/e/xqC17Tl3w==
+  dependencies:
+    "@storybook/addons" "6.3.8"
+    "@storybook/api" "6.3.8"
+    "@storybook/client-logger" "6.3.8"
+    "@storybook/components" "6.3.8"
+    "@storybook/router" "6.3.8"
+    "@storybook/source-loader" "6.3.8"
+    "@storybook/theming" "6.3.8"
+    core-js "^3.8.2"
+    estraverse "^5.2.0"
+    loader-utils "^2.0.0"
+    prettier "~2.2.1"
+    prop-types "^15.7.2"
+    react-syntax-highlighter "^13.5.3"
+    regenerator-runtime "^0.13.7"
 
 "@storybook/addon-toolbars@6.3.8":
   version "6.3.8"
@@ -3914,6 +3956,11 @@ aws4@^1.8.0:
   version "1.11.0"
   resolved "https://registry.nlark.com/aws4/download/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha1-1h9G2DslGSUOJ4Ta9bCUeai0HFk=
+
+axe-core@^4.2.0:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.3.tgz#b55cd8e8ddf659fe89b064680e1c6a4dceab0325"
+  integrity sha512-/lqqLAmuIPi79WYfRpy2i8z+x+vxU3zX2uAm0gs1q52qTuKwolOj1P8XbufpXcsydrpKx2yGn2wzAnxCMV86QA==
 
 babel-core@^7.0.0-bridge.0:
   version "7.0.0-bridge.0"
