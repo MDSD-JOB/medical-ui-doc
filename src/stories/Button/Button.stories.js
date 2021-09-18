@@ -5,25 +5,88 @@ export default {
   component: MedButton,
   title: '基础组件/按钮',
   argTypes: {
+    size: {
+      name: 'size',
+      type: { required: false },
+      description:
+        '预设按钮大小，可选值为 small large 或者不设，优先级低于自定义宽高',
+      control: {
+        type: 'select',
+        options: ['small', 'large'],
+      },
+    },
+    width: {
+      name: 'width',
+      type: { required: false },
+      description: '按钮宽度，例如 100px，默认由内容撑开',
+      control: {
+        type: 'text',
+      },
+    },
+    height: {
+      name: 'height',
+      type: { required: false },
+      description: '按钮高度，例如 100px',
+      control: {
+        type: 'text',
+      },
+    },
+    color: {
+      name: 'color',
+      type: { required: false },
+      description: '字体颜色，例如 red/#000/rgb(233,233,233)',
+      control: {
+        type: 'text',
+      },
+    },
+    bg: {
+      name: 'bg',
+      type: { required: false },
+      description: '背景色，例如 red/#000/rgb(233,233,233)',
+      control: {
+        type: 'text',
+      },
+    },
+    active: {
+      name: 'active',
+      table: {
+        defaultValue: { summary: false },
+      },
+      type: { required: false },
+      description: '选中状态，默认为主题色',
+      control: {
+        type: 'boolean',
+      },
+    },
     type: {
       name: 'type',
       table: {
         defaultValue: { summary: 'default' },
       },
       type: { required: false },
-      description: '设置按钮类型，可选值为 primary dashed danger link 或者不设',
+      description:
+        '预设的按钮类型，可选值为 primary dashed danger link 或者不设，优先级低于 active 属性',
       control: {
         type: 'select',
         options: ['primary', 'dashed', 'danger', 'link'],
       },
     },
-    disabled: {
-      name: 'disabled',
+    shape: {
+      name: 'shape',
+      type: { required: false },
+      description: '设置按钮形状，可选值为 circle round 或者不设',
+      control: {
+        type: 'select',
+        options: ['circle', 'round'],
+      },
+    },
+    block: {
+      name: 'block',
       table: {
         defaultValue: { summary: 'false' },
       },
       type: { required: false },
-      description: '按钮失效状态',
+      description: '将按钮宽度调整为其父宽度的选项',
       control: {
         type: 'boolean',
       },
@@ -32,6 +95,14 @@ export default {
       name: 'icon',
       type: { required: false },
       description: '设置按钮的图标类型',
+      control: {
+        type: 'text',
+      },
+    },
+    cusIcon: {
+      name: 'cusIcon',
+      type: { required: false },
+      description: '自定义图标，参数为图片url',
       control: {
         type: 'text',
       },
@@ -47,6 +118,17 @@ export default {
         type: 'boolean',
       },
     },
+    disabled: {
+      name: 'disabled',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+      type: { required: false },
+      description: '按钮失效状态',
+      control: {
+        type: 'boolean',
+      },
+    },
     loading: {
       name: 'loading',
       table: {
@@ -54,35 +136,6 @@ export default {
       },
       type: { required: false },
       description: '设置按钮载入状态',
-      control: {
-        type: 'boolean',
-      },
-    },
-    shape: {
-      name: 'shape',
-      type: { required: false },
-      description: '设置按钮形状，可选值为 circle round 或者不设',
-      control: {
-        type: 'select',
-        options: ['circle', 'round'],
-      },
-    },
-    size: {
-      name: 'size',
-      type: { required: false },
-      description: '设置按钮大小，可选值为 small large 或者不设',
-      control: {
-        type: 'select',
-        options: ['small', 'large'],
-      },
-    },
-    block: {
-      name: 'block',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
-      type: { required: false },
-      description: '将按钮宽度调整为其父宽度的选项',
       control: {
         type: 'boolean',
       },
@@ -129,6 +182,11 @@ const Template = (args, { argTypes }) => ({
     action: action('btnClick'),
   },
 })
+
+export const 按钮颜色 = Template.bind({})
+按钮颜色.args = {
+  active: true,
+}
 
 export const 按钮类型 = Template.bind({})
 按钮类型.args = {

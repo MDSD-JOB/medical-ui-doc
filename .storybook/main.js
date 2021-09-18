@@ -12,5 +12,6 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-notes',
     '@storybook/addon-viewport',
+    '@storybook/addon-knobs',
   ],
 }
