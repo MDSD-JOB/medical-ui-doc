@@ -282,7 +282,9 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { MedForm },
   props: Object.keys(argTypes),
-  template: '<med-form v-bind="$props" title="表单标题"></med-form>',
+  template: `<med-form v-bind="$props" title="表单标题"><template slot="footer">
+    <div style="text-align:center;">123sfwefew</div>
+  </template></med-form>`,
 })
 
 export const 标准表单 = Template.bind({})
