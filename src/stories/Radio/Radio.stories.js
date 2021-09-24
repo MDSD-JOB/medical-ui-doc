@@ -64,13 +64,12 @@ export default {
         type: 'boolean',
       },
     },
-    buttonStyle: {
-      name: 'buttonStyle',
+    continuous: {
+      name: 'continuous',
       type: { required: false },
-      description: 'RadioButton 的风格样式，目前有描边和填色两种风格',
+      description: '仅在buttonType为true生效，按钮分开还是连续',
       control: {
-        type: 'select',
-        options: ['solid', 'outline'],
+        type: 'boolean',
       },
     },
     initialValue: {
