@@ -1,5 +1,9 @@
 import { MedCard } from 'medical-ui'
-
+const tabList = [
+  { key: 'tab1', tab: 'tab1' },
+  { key: 'tab2', tab: 'tab2' },
+  { key: 'tab3', tab: 'tab3' },
+]
 export default {
   component: MedCard,
   title: '基础组件/卡片',
@@ -67,6 +71,17 @@ export default {
       type: { required: false },
       description: '切换为带tab栏的卡片，例[{key:"tab1",tab:"tab1"}]',
     },
+    defaultTabKey: {
+      name: 'defaultTabKey',
+      table: {
+        defaultValue: { summary: 'tab1' },
+      },
+      type: { required: false },
+      description: '带标签时默认选中的',
+      control: {
+        type: 'text',
+      },
+    },
   },
 }
 const Template = (args, { argTypes }) => ({
@@ -75,14 +90,13 @@ const Template = (args, { argTypes }) => ({
   template: '<med-card v-bind="$props">我是卡片</med-card>',
 })
 
+export const 带标签的卡片 = Template.bind({})
+带标签的卡片.args = {
+  tabList: tabList,
+  defaultTabKey: 'tab1',
+}
+
 export const 标准卡片 = Template.bind({})
 标准卡片.args = {
   title: '我是卡片',
-}
-export const 带标签的卡片 = Template.bind({})
-带标签的卡片.args = {
-  tabList: [
-    { key: 'tab1', tab: 'tab1' },
-    { key: 'tab2', tab: 'tab2' },
-  ],
 }

@@ -1,9 +1,18 @@
 import { action } from '@storybook/addon-actions'
 import { MedRadio } from 'medical-ui'
+const optionList = [
+  { label: '选项1', value: '0', disabled: true },
+  { label: '选项2', value: '1' },
+]
+const formLayout = { labelCol: { span: 6 }, wrapperCol: { span: 18 } }
 
 export default {
   component: MedRadio,
   title: '基础组件/单选框',
+  args: {
+    optionList,
+    formLayout,
+  },
   argTypes: {
     optionList: {
       name: 'optionList',
@@ -15,9 +24,6 @@ export default {
         },
       },
       description: '选项列表',
-      control: {
-        type: 'object',
-      },
     },
     isFormItem: {
       name: 'isFormItem',
@@ -39,17 +45,16 @@ export default {
       },
       type: { required: false },
       description: 'isFormItem = true生效，用于表单时的布局，标签和选框的布局',
-      control: {
-        type: 'object',
-      },
     },
-    decorator: {
-      name: 'decorator',
+    validator: {
+      name: 'validator',
       type: { required: false },
-      description: 'isFormItem = true生效，用于表单时的校验',
-      control: {
-        type: 'object',
+      table: {
+        defaultValue: {
+          summary: "(rule, value, cb) => {if (!value) {cb('必填')}cb()}",
+        },
       },
+      description: 'isFormItem = true生效，用于表单时的校验',
     },
     buttonType: {
       name: 'buttonType',
@@ -98,10 +103,4 @@ const Template = (args, { argTypes }) => ({
   },
 })
 
-export const 单选框 = Template.bind({})
-单选框.args = {
-  optionList: [
-    { label: '选项1', value: '0', disabled: true },
-    { label: '选项2', value: '1' },
-  ],
-}
+export const 普通单选框 = Template.bind({})

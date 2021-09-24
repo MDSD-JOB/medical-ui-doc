@@ -1,9 +1,17 @@
 import { action } from '@storybook/addon-actions'
 import { MedCheckbox } from 'medical-ui'
-
+const optionList = [
+  { label: '选项1', value: '0', disabled: true },
+  { label: '选项2', value: '1' },
+]
+const formLayout = { labelCol: { span: 6 }, wrapperCol: { span: 18 } }
 export default {
   component: MedCheckbox,
   title: '基础组件/复选框',
+  args: {
+    optionList,
+    formLayout,
+  },
   argTypes: {
     optionList: {
       name: 'optionList',
@@ -81,10 +89,4 @@ const Template = (args, { argTypes }) => ({
   },
 })
 
-export const 复选框 = Template.bind({})
-复选框.args = {
-  optionList: [
-    { label: '选项1', value: '0', disabled: true },
-    { label: '选项2', value: '1' },
-  ],
-}
+export const 普通复选框 = Template.bind({})
