@@ -8,7 +8,6 @@ const responsive = {
   xs: 24,
 }
 const form = {}
-const formLayout = {}
 const dataSource = [
   {
     labelText: '输入框',
@@ -158,7 +157,6 @@ export default {
   title: '基础组件/表单(v-model)',
   args: {
     form,
-    formLayout,
     responsive,
     dataSource,
   },
@@ -171,7 +169,7 @@ export default {
         },
       },
       type: { required: true },
-      description: '表单双向绑定的对象，即表单内容得到的key-value对象',
+      description: '必填，表单双向绑定的对象，即表单内容得到的key-value对象',
     },
     dataSource: {
       name: 'dataSource',
@@ -184,6 +182,38 @@ export default {
       type: { required: true },
       description: '数据源',
     },
+    formLayout: {
+      name: 'formLayout',
+      type: { required: false },
+      table: {
+        defaultValue: {
+          summary: '{ labelCol: { span: 8 }, wrapperCol: { span: 16 } }',
+        },
+      },
+      description: '控件的标签和输入框占位大小',
+      control: {
+        type: 'object',
+      },
+    },
+    datetimeTotimeStamp: {
+      name: 'datetimeTotimeStamp',
+      type: { required: false },
+      description: '是否把时间控件的返回值全部转为时间戳',
+      control: {
+        type: 'boolean',
+      },
+    },
+    showBtn: {
+      name: 'showBtn',
+      type: { required: false },
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+      description: '是否展示默认的提交按钮',
+      control: {
+        type: 'boolean',
+      },
+    },
     bordered: {
       name: 'bordered',
       type: { required: false },
@@ -191,14 +221,6 @@ export default {
         defaultValue: { summary: 'false' },
       },
       description: '是否显示边框',
-      control: {
-        type: 'boolean',
-      },
-    },
-    datetimeTotimeStamp: {
-      name: 'datetimeTotimeStamp',
-      type: { required: false },
-      description: '是否把时间控件的返回值全部转为时间戳',
       control: {
         type: 'boolean',
       },
@@ -237,18 +259,23 @@ export default {
         type: 'object',
       },
     },
-    formLayout: {
-      name: 'formLayout',
+    footer: {
+      name: 'footer',
       type: { required: false },
       table: {
-        defaultValue: {
-          summary: '{ labelCol: { span: 8 }, wrapperCol: { span: 16 } }',
-        },
+        defaultValue: { summary: '<template #footer></template>' },
       },
-      description: '控件的标签和输入框占位大小',
-      control: {
-        type: 'object',
+      description: '插槽，默认为底部，可用于添加按钮等',
+      control: null,
+    },
+    customItem: {
+      name: 'customItem',
+      type: { required: false },
+      table: {
+        defaultValue: { summary: '<template #customItem></template>' },
       },
+      description: '以tempalte方式添加自定义的form-item项',
+      control: null,
     },
   },
 }

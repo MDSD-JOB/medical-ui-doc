@@ -159,6 +159,17 @@ export default {
     dataSource,
   },
   argTypes: {
+    dataSource: {
+      name: 'dataSource',
+      table: {
+        defaultValue: {
+          summary:
+            "[{labelText: '输入框',type: 'text',placeholder: '文本输入区域',fieldName: 'formFieldText',required: true,wrongMsg: '请输入文本',validator: (rule, value, cb) => {if (value && value.startsWith(1)) {cb('不能以1开头')}cb()}}]",
+        },
+      },
+      type: { required: true },
+      description: '数据源',
+    },
     layout: {
       name: 'layout',
       type: { required: false },
@@ -174,9 +185,17 @@ export default {
     formTitle: {
       name: 'formTitle',
       type: { required: false },
-      description: '标题',
+      description: '仅在layout为card时生效，表单标题',
       control: {
         type: 'text',
+      },
+    },
+    datetimeTotimeStamp: {
+      name: 'datetimeTotimeStamp',
+      type: { required: false },
+      description: '是否把时间控件的返回值全部转为时间戳',
+      control: {
+        type: 'boolean',
       },
     },
     maxItem: {
@@ -197,14 +216,6 @@ export default {
         defaultValue: { summary: 'false' },
       },
       description: '是否显示边框',
-      control: {
-        type: 'boolean',
-      },
-    },
-    datetimeTotimeStamp: {
-      name: 'datetimeTotimeStamp',
-      type: { required: false },
-      description: '是否把时间控件的返回值全部转为时间戳',
       control: {
         type: 'boolean',
       },
@@ -243,16 +254,23 @@ export default {
         type: 'object',
       },
     },
-    dataSource: {
-      name: 'dataSource',
+    footer: {
+      name: 'footer',
+      type: { required: false },
       table: {
-        defaultValue: {
-          summary:
-            "[{labelText: '输入框',type: 'text',placeholder: '文本输入区域',fieldName: 'formFieldText',required: true,wrongMsg: '请输入文本',validator: (rule, value, cb) => {if (value && value.startsWith(1)) {cb('不能以1开头')}cb()}}]",
-        },
+        defaultValue: { summary: '<template #footer></template>' },
       },
-      type: { required: true },
-      description: '数据源',
+      description: '插槽，默认为底部',
+      control: null,
+    },
+    customItem: {
+      name: 'customItem',
+      type: { required: false },
+      table: {
+        defaultValue: { summary: '<template #customItem></template>' },
+      },
+      description: '以tempalte方式添加自定义的form-item项',
+      control: null,
     },
   },
 }
@@ -260,9 +278,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { MedForm },
   props: Object.keys(argTypes),
-  template: `<med-form v-bind="$props" title="表单标题"><template slot="footer">
-    <div style="text-align:center;">123sfwefew</div>
-  </template></med-form>`,
+  template: `<med-form v-bind="$props" title="表单标题"></med-form>`,
 })
 
 export const 标准表单 = Template.bind({})

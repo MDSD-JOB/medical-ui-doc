@@ -82,6 +82,24 @@ export default {
         type: 'text',
       },
     },
+    actions: {
+      name: 'actions',
+      type: { required: false },
+      table: {
+        defaultValue: { summary: '<template #actions></template>' },
+      },
+      description: '卡片操作组，位置在卡片底部',
+      control: null,
+    },
+    extra: {
+      name: 'extra',
+      type: { required: false },
+      table: {
+        defaultValue: { summary: '<template #extra></template>' },
+      },
+      description: '插槽，默认在右上角',
+      control: null,
+    },
   },
 }
 const Template = (args, { argTypes }) => ({

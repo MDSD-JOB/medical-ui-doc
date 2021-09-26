@@ -9741,10 +9741,10 @@ media-typer@0.3.0:
   resolved "https://registry.nlark.com/media-typer/download/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-medical-ui@^0.1.63:
-  version "0.1.63"
-  resolved "https://registry.yarnpkg.com/medical-ui/-/medical-ui-0.1.63.tgz#4ce87b59bcf0fb0188f7d68e1fc4ecfcf56fce73"
-  integrity sha512-NG7OMUEQa+oIihYwfhKUUzkaRvvnryYly/PrFV7cWK7brwiqTRly1+p3bOHnbPcfalQ2VNPDQr8QHrPPpoN3yw==
+medical-ui@^0.1.69:
+  version "0.1.69"
+  resolved "https://registry.yarnpkg.com/medical-ui/-/medical-ui-0.1.69.tgz#cda6cb5c24a4d878096c0ac7aa23f037fb912293"
+  integrity sha512-ZI0Yu/9ni4xjvsYs8n+1zAZJ5j5aKPE4xOOvgzR3V2KZy3iKqqbVG26lRhcxkWoLoNuHOJkQWFp2jTgsDFLKdw==
   dependencies:
     "@babel/runtime" "^7.9.2"
     lodash "^4.17.15"
