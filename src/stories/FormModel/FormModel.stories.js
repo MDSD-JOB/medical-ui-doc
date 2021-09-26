@@ -1,4 +1,4 @@
-import { MedForm } from 'medical-ui'
+import { MedFormModel } from 'medical-ui'
 
 const responsive = {
   xl: 8,
@@ -7,6 +7,8 @@ const responsive = {
   sm: 24,
   xs: 24,
 }
+const form = {}
+const formLayout = {}
 const dataSource = [
   {
     labelText: '输入框',
@@ -152,43 +154,35 @@ const dataSource = [
 ]
 
 export default {
-  component: MedForm,
-  title: '基础组件/表单',
+  component: MedFormModel,
+  title: '基础组件/表单(v-model)',
   args: {
+    form,
+    formLayout,
     responsive,
     dataSource,
   },
   argTypes: {
-    layout: {
-      name: 'layout',
-      type: { required: false },
+    form: {
+      name: 'form',
       table: {
-        defaultValue: { summary: 'card' },
+        defaultValue: {
+          summary: '{}',
+        },
       },
-      description: '设置表单布局，可选值card inline',
-      control: {
-        type: 'select',
-        options: ['card', 'inline'],
-      },
+      type: { required: true },
+      description: '表单双向绑定的对象，即表单内容得到的key-value对象',
     },
-    formTitle: {
-      name: 'formTitle',
-      type: { required: false },
-      description: '标题',
-      control: {
-        type: 'text',
-      },
-    },
-    maxItem: {
-      name: 'num',
-      type: { required: false },
+    dataSource: {
+      name: 'dataSource',
       table: {
-        defaultValue: { summary: '999' },
+        defaultValue: {
+          summary:
+            "[{labelText: '输入框',type: 'text',placeholder: '文本输入区域',fieldName: 'formFieldText',required: true,wrongMsg: '请输入文本',validator: (rule, value, cb) => {if (value && value.startsWith(1)) {cb('不能以1开头')}cb()}}]",
+        },
       },
-      description: '超过多少个折叠',
-      control: {
-        type: 'number',
-      },
+      type: { required: true },
+      description: '数据源',
     },
     bordered: {
       name: 'bordered',
@@ -243,36 +237,30 @@ export default {
         type: 'object',
       },
     },
-    dataSource: {
-      name: 'dataSource',
+    formLayout: {
+      name: 'formLayout',
+      type: { required: false },
       table: {
         defaultValue: {
-          summary:
-            "[{labelText: '输入框',type: 'text',placeholder: '文本输入区域',fieldName: 'formFieldText',required: true,wrongMsg: '请输入文本',validator: (rule, value, cb) => {if (value && value.startsWith(1)) {cb('不能以1开头')}cb()}}]",
+          summary: '{ labelCol: { span: 8 }, wrapperCol: { span: 16 } }',
         },
       },
-      type: { required: true },
-      description: '数据源',
+      description: '控件的标签和输入框占位大小',
+      control: {
+        type: 'object',
+      },
     },
   },
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { MedForm },
+  components: { MedFormModel },
   props: Object.keys(argTypes),
-  template: `<med-form v-bind="$props" title="表单标题"><template slot="footer">
-    <div style="text-align:center;">123sfwefew</div>
-  </template></med-form>`,
+  template: `
+    <med-form-model v-bind="$props"></med-form-model>
+  `,
 })
 
-export const 标准表单 = Template.bind({})
+export const 双向绑定表单 = Template.bind({})
 
-export const 适用于表格搜索 = Template.bind({})
-适用于表格搜索.args = {
-  layout: 'inline',
-}
-
-export const 卡片表单 = Template.bind({})
-卡片表单.args = {
-  layout: 'card',
-}
+export const 适用于新增 = Template.bind({})
