@@ -169,7 +169,8 @@ export default {
         },
       },
       type: { required: true },
-      description: '必填，表单双向绑定的对象，即表单内容得到的key-value对象',
+      description:
+        '【必填项】表单双向绑定的对象，即表单内容得到的key-value对象',
     },
     dataSource: {
       name: 'dataSource',
@@ -180,7 +181,7 @@ export default {
         },
       },
       type: { required: true },
-      description: '数据源',
+      description: '【必填项】数据源',
     },
     formLayout: {
       name: 'formLayout',

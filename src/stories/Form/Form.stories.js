@@ -168,7 +168,7 @@ export default {
         },
       },
       type: { required: true },
-      description: '数据源',
+      description: '【必填项】数据源',
     },
     layout: {
       name: 'layout',

@@ -4,7 +4,7 @@
   "main": "lib/medical-ui.common.js",
   "scripts": {
     "sb": "yarn add medical-ui && start-storybook -p 6006",
-    "build:sb": "build-storybook",
+    "build:sb": "yarn add medical-ui && build-storybook",
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -25,7 +25,7 @@
     "@storybook/addon-knobs": "^6.3.1",
     "@storybook/addon-storysource": "^6.3.8",
     "core-js": "^3.6.5",
-    "medical-ui": "^0.1.70",
+    "medical-ui": "^0.1.77",
     "vue": "^2.6.11"
   },
   "devDependencies": {
